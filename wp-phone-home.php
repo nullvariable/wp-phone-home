@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Phone Home
 Plugin URI: http://dougcone.com/blog/wp-phone-home/
-Description: This plugin sends an email any time it detects an IP address/network settings change on it's side
+Description: This plugin sends an email any time it detects an IP address/network settings change on its side
 Author: Doug Cone
 Version: 1.0
 Author URI: http://dougcone.com/
