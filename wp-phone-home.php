@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Phone Home
-Plugin URI: http://dougcone.com/blog/wp-phone-home/
+Plugin URI: http://dougcone.com
 Description: This plugin sends an email any time it detects an IP address/network settings change on its side
 Author: Doug Cone
 Version: 1.0
@@ -41,7 +41,7 @@ class wp_phone_home {
     function phone_home_test() {
         $ifconfig = shell_exec("/sbin/ifconfig");
         $message = "SERVER_ADDR = ".$_SERVER['SERVER_ADDR'];
-        $message .= "ifconfig: \n".$ifconfig;
+        $message .= "\nifconfig: \n".$ifconfig;
         if ( get_option(WP_PHONE_HOME) != $message) {
             //the settings are different from the last message we sent, generate a new one
             $this->phone_home($message);
@@ -56,7 +56,7 @@ class wp_phone_home {
     function phone_home($message) {
         wp_mail(
             get_option('admin_email'),
-            get_option("blogname") . __("Phone Home "),
+            get_option("blogname") . __(" Phone Home"),
             $message
         );
     }
